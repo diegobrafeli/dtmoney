@@ -8,6 +8,7 @@ createServer({
     transaction: Model,
   },
 
+  //popular valores iniciais do banco de dados usando model
   seeds(server){
     server.db.loadData({
       transactions: [//A tabela é o nome do model no plural no caso o model é transaction e a tabela é transactions
@@ -35,13 +36,13 @@ createServer({
     this.namespace = 'api';
 
     this.get('/transactions', () => {
-      return this.schema.all('transaction');
+      return this.schema.all('transaction');//retornar todas as transações dentro do model(banco de dados)
     })
 
     this.post('/transactions', (schema, request) => {
       const data = JSON.parse(request.requestBody);
 
-      return schema.create('transaction', data);
+      return schema.create('transaction', data);//qual é o medel e os dados que vao ser enviados
     })
 
   }
