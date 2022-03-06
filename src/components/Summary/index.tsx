@@ -28,6 +28,7 @@ export function Summary(){
         }
 
         return acc;
+        
     }, {
         deposits: 0,
         withdraws: 0,

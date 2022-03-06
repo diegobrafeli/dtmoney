@@ -17,6 +17,7 @@ interface Transaction {
 //     category: string;
 // }
 
+//Omit remove id e createdAt da interface Transaction
 type TransactionInput = Omit<Transaction, 'id' | 'createdAt'>;
 
 // type TransactionInput = Pick<Transaction, 'title' | 'amount' | 'type' | 'category'>;
@@ -66,7 +67,7 @@ export function TransactionsProvider({children}: TransactionProviderProps) {
     )
 }
 
-//só para ficar mais arrumado o codigo
+//só para ficar mais arrumado o codigo. Subistituindo 2 imports por apenas 1
 export function useTransactions() {
     const context = useContext(TransactionsContext);
 
